@@ -16,6 +16,7 @@ function send_email_on_new_post($post_id, $post, $old_status) {
         // Prepare email data
         $post_url = get_permalink($post_id);
         $post_title = get_the_title($post_id);
+        $post_title = html_entity_decode($post_title, ENT_QUOTES, 'UTF-8');
         $subject = "New post on my site - {$post_title}";
         $message = "Hi,\n\nA new post has just been published: {$post_title}\nYou can find it at: {$post_url}\n\nThanks!";
         $headers = 'From: Notifier <noreply@email.com>';
