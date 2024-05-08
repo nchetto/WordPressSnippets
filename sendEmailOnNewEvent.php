@@ -38,6 +38,6 @@ function send_email_on_new_event( $new_status, $old_status, $post ) {
 }
 
 // Hook into the publish_post action
-add_action('publish_post', 'send_email_on_new_event', 10, 3);
+add_action('transition_post_status', 'send_email_on_new_event', 10, 3);
 
 ?>
